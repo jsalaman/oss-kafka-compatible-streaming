@@ -14,8 +14,8 @@ public class CompatibleProducer {
         String authToken = System.getenv("AUTH_TOKEN");
         String tenancyName = System.getenv("TENANCY_NAME");
         String username = System.getenv("STREAMING_USERNAME");
-        String compartmentId = System.getenv("COMPARTMENT_ID");
-        String topicName = System.getenv("TOPIC_NAME");
+        String streamPoolId = System.getenv("STREAMPOOL_ID");
+        String streamName = System.getenv("STREAM_NAME");
 
         Properties properties = new Properties();
         properties.put("bootstrap.servers", "streaming.us-phoenix-1.oci.oraclecloud.com:9092");
@@ -28,7 +28,7 @@ public class CompatibleProducer {
                         "org.apache.kafka.common.security.plain.PlainLoginModule required username=\""
                         + tenancyName + "/"
                         + username + "/"
-                        + compartmentId + "\" "
+                        + streamPoolId + "\" "
                         + "password=\""
                         + authToken + "\";"
         );
@@ -39,7 +39,7 @@ public class CompatibleProducer {
         KafkaProducer producer = new KafkaProducer<>(properties);
 
         for (int i = 0; i < 5; i++) {
-            ProducerRecord<String, String> record = new ProducerRecord<>(topicName, UUID.randomUUID().toString(), "Test record #" + i);
+            ProducerRecord<String, String> record = new ProducerRecord<>(streamName, UUID.randomUUID().toString(), "Test record #" + i);
             producer.send(record, (md, ex) -> {
                 if( ex != null ) {
                     ex.printStackTrace();
