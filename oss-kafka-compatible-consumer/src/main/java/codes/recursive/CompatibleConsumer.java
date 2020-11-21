@@ -21,7 +21,7 @@ public class CompatibleConsumer {
         String streamName = System.getenv("STREAM_NAME");
 
         Properties properties = new Properties();
-        properties.put("bootstrap.servers", "streaming.us-phoenix-1.oci.oraclecloud.com:9092");
+        properties.put("bootstrap.servers", "oiyghpdx37eq.streaming.us-ashburn-1.oci.oraclecloud.com:9092");
         properties.put("security.protocol", "SASL_SSL");
         properties.put("sasl.mechanism", "PLAIN");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "group-0");

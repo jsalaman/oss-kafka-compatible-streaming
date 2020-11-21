@@ -1,0 +1,6 @@
+#!/bin/bash
+export AUTH_TOKEN=")g21Ro9Ud-)W7+[k+Dtm"
+export TENANCY_NAME=hdew
+export STREAMING_USERNAME=svcacct_portabilidad_prd
+export STREAMPOOL_ID=ocid1.streampool.oc1.iad.amaaaaaa4pu6a7iax7lv7teecns3kbdok6w6gvirwzuuj56ooiyghpdx37eq
+export STREAM_NAME=pashprocistreamportabilidad01
